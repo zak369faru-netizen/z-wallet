@@ -1,0 +1,5 @@
+import{ResponsiveContainer,PieChart,Pie,Cell,LineChart,Line,XAxis,YAxis,Tooltip,BarChart,Bar}from'recharts';
+const colors=['#10b981','#8b5cf6','#3b82f6','#f59e0b','#ef4444','#06b6d4'];
+export function CategoryPie({data}:{data:any[]}){return <ResponsiveContainer width="100%" height={260}><PieChart><Pie data={data} dataKey="value" nameKey="name" innerRadius={60} outerRadius={95}>{data.map((_,i)=><Cell key={i} fill={colors[i%colors.length]}/>)}</Pie><Tooltip/></PieChart></ResponsiveContainer>}
+export function TrendLine({data}:{data:any[]}){return <ResponsiveContainer width="100%" height={280}><LineChart data={[...data].reverse()}><XAxis dataKey="month"/><YAxis/><Tooltip/><Line type="monotone" dataKey="income" stroke="#10b981" strokeWidth={3}/><Line type="monotone" dataKey="expenses" stroke="#8b5cf6" strokeWidth={3}/></LineChart></ResponsiveContainer>}
+export function BudgetBars({data}:{data:any[]}){return <ResponsiveContainer width="100%" height={250}><BarChart data={data}><XAxis dataKey="category_name"/><YAxis/><Tooltip/><Bar dataKey="limit_amount" fill="#10b981" radius={[10,10,0,0]}/></BarChart></ResponsiveContainer>}

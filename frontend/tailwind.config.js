@@ -1,0 +1,1 @@
+export default { darkMode:'class', content:['./index.html','./src/**/*.{ts,tsx}'], theme:{ extend:{ colors:{ wallet:{ ink:'#020617', navy:'#07152f', emerald:'#10b981', purple:'#8b5cf6' }}, boxShadow:{ glow:'0 0 50px rgba(16,185,129,.18)'}, backdropBlur:{ xs:'2px'}}}, plugins:[] }
